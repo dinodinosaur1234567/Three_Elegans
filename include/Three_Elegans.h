@@ -1,3 +1,5 @@
 #pragma once
 
-void init();
+typedef struct Brain Brain;
+
+void BrainInit(Brain* b);
