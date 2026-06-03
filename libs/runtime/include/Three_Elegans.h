@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Three_Elegans.h"
 #include <stdint.h>
 
 typedef struct 
@@ -8,13 +7,10 @@ typedef struct
     uint8_t something;
 } Neuron;
 
-struct Brain 
+typedef struct
 {
     int neuron_count;
-    float* state;
-};
+    Neuron *neurons;
+} Brain;
 
-void BrainInit(Brain* b)
-{
-    
-}
+void InitBrain(Brain* b);
