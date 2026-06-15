@@ -1,0 +1,18 @@
+STTECNNF (8 bytes)
+format_version (uint8_t)
+sim_details (uint8_t)
+
+sensory_neurons_count (uint32_t)
+inter_neurons_count (uint32_t)
+motor_neurons_count (uint32_t)
+synapses_count (uint32_t)
+
+neurons:
+    threshold (uint16_t)
+    ...
+
+synapses:
+    source (uint32_t)
+    target (uint32_t)
+    weight (int16_t)
+    ...

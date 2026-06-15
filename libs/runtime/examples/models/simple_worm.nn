@@ -1,0 +1,41 @@
+HEADER:
+    name: "\f"
+    version: 1
+    author: "Tudor"
+
+COMPILER:
+    format_version: 0
+    simulation_details: 0
+
+DATA:
+    sensory:
+        s1: (
+            threshold: 50
+            synapses: [
+                (strength: 10, type: excitatory, target: i1)
+            ]
+        )
+
+    inter:
+        i1: (
+            threshold: 50
+            synapses: [
+                (strength: 10, type: inhibitory, target: m1)
+            ]
+        )
+
+    motor:
+        m1: (
+            threshold: 50
+        )
+
+# #------Symbols------#
+# | # - comment       |
+# | : - equals        |
+# | , - next value    |
+# | \n - next value   |
+# | \t - indentation  |
+# | \f - file name    |
+# | () - object       |
+# | [] - list         |
+# #-------------------#

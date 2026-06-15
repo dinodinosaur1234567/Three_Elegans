@@ -1,8 +1,12 @@
 #include <stdio.h>
+#include "Three_Elegans.h"
 
-int main() 
+int main(void)
 {
-    printf("Brain sim starting...\n");
-    
+    CompileNN(
+        "C:/Users/Stefanescu Tudor/OneDrive/Documents/Three_Elegans/libs/runtime/examples/models/simple_worm.nn",
+        "C:/Users/Stefanescu Tudor/OneDrive/Documents/Three_Elegans/libs/runtime/examples/models/simple_worm.cnn"
+    );
+
     return 0;
 }

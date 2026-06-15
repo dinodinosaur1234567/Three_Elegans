@@ -1,28 +1,24 @@
 cmake_minimum_required(VERSION 3.16)
-
 project(Three_Elegans C)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-# -----------------------------
-# SOURCE FILES (engine core)
-# -----------------------------
-file(GLOB_RECURSE CORE_SOURCES
-    src/*.c
+file(GLOB_RECURSE LIB_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/*.c
 )
 
-# -----------------------------
-# BUILD THE RUNTIME LIBRARY
-# -----------------------------
-add_library(Three_Elegans SHARED ${CORE_SOURCES})
+add_library(Three_Elegans STATIC ${LIB_SOURCES})
 
-# Public headers
-target_include_directories(Three_Elegans PUBLIC include)
+target_include_directories(Three_Elegans PUBLIC
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/src
+)
 
-# -----------------------------
-# TEST / DEMO EXECUTABLE
-# -----------------------------
 add_executable(demo examples/demo.c)
 
-target_link_libraries(demo Three_Elegans)
+target_link_libraries(demo PRIVATE Three_Elegans)
+
+set_target_properties(Three_Elegans PROPERTIES
+    PREFIX ""
+)
